@@ -84,8 +84,8 @@ def whatsapp_bot():
 # Step 7: Run App (Only if running outside sandboxed environments)
 if __name__ == "__main__":
     try:
-        # Avoid debug=True and catch sys.exit to suppress sandbox crashes
-        app.run(debug=False, port=5000, use_reloader=False)
+        port = int(os.environ.get("PORT", 5000))
+        app.run(host="0.0.0.0", port=port)
     except SystemExit:
         print("Flask exited cleanly in restricted environment.")
 
