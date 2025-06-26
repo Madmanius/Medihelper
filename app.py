@@ -85,7 +85,7 @@ def whatsapp_bot():
 if __name__ == "__main__":
     try:
         port = int(os.environ.get("PORT", 5000))
-        app.run(host="0.0.0.0", port=port)
+        app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
     except SystemExit:
         print("Flask exited cleanly in restricted environment.")
 
