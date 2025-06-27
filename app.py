@@ -81,6 +81,10 @@ def whatsapp_bot():
     response.message(reply_text)
     return str(response)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "✅ Dr. Sahayak is running. Use WhatsApp to chat."
+
 # Step 7: Run App (Only if running outside sandboxed environments)
 if __name__ == "__main__":
     try:
